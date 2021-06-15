@@ -1,0 +1,277 @@
+@page
+@model NutritionTrackerRazorPages.Pages.ComplexFoods.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ComplexFood</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Calories)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Calories)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Fat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Fat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.MonounsaturatedFat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.MonounsaturatedFat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.PolyunsaturatedFat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.PolyunsaturatedFat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Omega3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Omega3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Omega6)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Omega6)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.SaturatedFat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.SaturatedFat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.TransFat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.TransFat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Cholesterol)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Cholesterol)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Carbohydrates)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Carbohydrates)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Fiber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Fiber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.SolubleFiber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.SolubleFiber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.InsolubleFiber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.InsolubleFiber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Starch)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Starch)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Sugars)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Sugars)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.AddedSugars)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.AddedSugars)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Protein)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Protein)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.VitaminB1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.VitaminB1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.VitaminB2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.VitaminB2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.VitaminB3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.VitaminB3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.VitaminB5)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.VitaminB5)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.VitaminB6)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.VitaminB6)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.VitaminB12)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.VitaminB12)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Folate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Folate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.VitaminA)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.VitaminA)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.VitaminC)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.VitaminC)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.VitaminD)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.VitaminD)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.VitaminE)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.VitaminE)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.VitaminK)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.VitaminK)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Calcium)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Calcium)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Copper)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Copper)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Iron)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Iron)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Magnesium)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Magnesium)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Manganese)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Manganese)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Phosphorus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Phosphorus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Potassium)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Potassium)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Selenium)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Selenium)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Sodium)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Sodium)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Zinc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Zinc)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.User)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.User.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.ServingSize)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.ServingSize)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFood.Discriminator)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFood.Discriminator)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ComplexFood.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

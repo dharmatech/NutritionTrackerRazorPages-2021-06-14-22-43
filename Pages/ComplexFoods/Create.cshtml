@@ -1,0 +1,243 @@
+@page
+@model NutritionTrackerRazorPages.Pages.ComplexFoods.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ComplexFood</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Calories" class="control-label"></label>
+                <input asp-for="ComplexFood.Calories" class="form-control" />
+                <span asp-validation-for="ComplexFood.Calories" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Fat" class="control-label"></label>
+                <input asp-for="ComplexFood.Fat" class="form-control" />
+                <span asp-validation-for="ComplexFood.Fat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.MonounsaturatedFat" class="control-label"></label>
+                <input asp-for="ComplexFood.MonounsaturatedFat" class="form-control" />
+                <span asp-validation-for="ComplexFood.MonounsaturatedFat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.PolyunsaturatedFat" class="control-label"></label>
+                <input asp-for="ComplexFood.PolyunsaturatedFat" class="form-control" />
+                <span asp-validation-for="ComplexFood.PolyunsaturatedFat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Omega3" class="control-label"></label>
+                <input asp-for="ComplexFood.Omega3" class="form-control" />
+                <span asp-validation-for="ComplexFood.Omega3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Omega6" class="control-label"></label>
+                <input asp-for="ComplexFood.Omega6" class="form-control" />
+                <span asp-validation-for="ComplexFood.Omega6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.SaturatedFat" class="control-label"></label>
+                <input asp-for="ComplexFood.SaturatedFat" class="form-control" />
+                <span asp-validation-for="ComplexFood.SaturatedFat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.TransFat" class="control-label"></label>
+                <input asp-for="ComplexFood.TransFat" class="form-control" />
+                <span asp-validation-for="ComplexFood.TransFat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Cholesterol" class="control-label"></label>
+                <input asp-for="ComplexFood.Cholesterol" class="form-control" />
+                <span asp-validation-for="ComplexFood.Cholesterol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Carbohydrates" class="control-label"></label>
+                <input asp-for="ComplexFood.Carbohydrates" class="form-control" />
+                <span asp-validation-for="ComplexFood.Carbohydrates" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Fiber" class="control-label"></label>
+                <input asp-for="ComplexFood.Fiber" class="form-control" />
+                <span asp-validation-for="ComplexFood.Fiber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.SolubleFiber" class="control-label"></label>
+                <input asp-for="ComplexFood.SolubleFiber" class="form-control" />
+                <span asp-validation-for="ComplexFood.SolubleFiber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.InsolubleFiber" class="control-label"></label>
+                <input asp-for="ComplexFood.InsolubleFiber" class="form-control" />
+                <span asp-validation-for="ComplexFood.InsolubleFiber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Starch" class="control-label"></label>
+                <input asp-for="ComplexFood.Starch" class="form-control" />
+                <span asp-validation-for="ComplexFood.Starch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Sugars" class="control-label"></label>
+                <input asp-for="ComplexFood.Sugars" class="form-control" />
+                <span asp-validation-for="ComplexFood.Sugars" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.AddedSugars" class="control-label"></label>
+                <input asp-for="ComplexFood.AddedSugars" class="form-control" />
+                <span asp-validation-for="ComplexFood.AddedSugars" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Protein" class="control-label"></label>
+                <input asp-for="ComplexFood.Protein" class="form-control" />
+                <span asp-validation-for="ComplexFood.Protein" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.VitaminB1" class="control-label"></label>
+                <input asp-for="ComplexFood.VitaminB1" class="form-control" />
+                <span asp-validation-for="ComplexFood.VitaminB1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.VitaminB2" class="control-label"></label>
+                <input asp-for="ComplexFood.VitaminB2" class="form-control" />
+                <span asp-validation-for="ComplexFood.VitaminB2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.VitaminB3" class="control-label"></label>
+                <input asp-for="ComplexFood.VitaminB3" class="form-control" />
+                <span asp-validation-for="ComplexFood.VitaminB3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.VitaminB5" class="control-label"></label>
+                <input asp-for="ComplexFood.VitaminB5" class="form-control" />
+                <span asp-validation-for="ComplexFood.VitaminB5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.VitaminB6" class="control-label"></label>
+                <input asp-for="ComplexFood.VitaminB6" class="form-control" />
+                <span asp-validation-for="ComplexFood.VitaminB6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.VitaminB12" class="control-label"></label>
+                <input asp-for="ComplexFood.VitaminB12" class="form-control" />
+                <span asp-validation-for="ComplexFood.VitaminB12" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Folate" class="control-label"></label>
+                <input asp-for="ComplexFood.Folate" class="form-control" />
+                <span asp-validation-for="ComplexFood.Folate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.VitaminA" class="control-label"></label>
+                <input asp-for="ComplexFood.VitaminA" class="form-control" />
+                <span asp-validation-for="ComplexFood.VitaminA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.VitaminC" class="control-label"></label>
+                <input asp-for="ComplexFood.VitaminC" class="form-control" />
+                <span asp-validation-for="ComplexFood.VitaminC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.VitaminD" class="control-label"></label>
+                <input asp-for="ComplexFood.VitaminD" class="form-control" />
+                <span asp-validation-for="ComplexFood.VitaminD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.VitaminE" class="control-label"></label>
+                <input asp-for="ComplexFood.VitaminE" class="form-control" />
+                <span asp-validation-for="ComplexFood.VitaminE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.VitaminK" class="control-label"></label>
+                <input asp-for="ComplexFood.VitaminK" class="form-control" />
+                <span asp-validation-for="ComplexFood.VitaminK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Calcium" class="control-label"></label>
+                <input asp-for="ComplexFood.Calcium" class="form-control" />
+                <span asp-validation-for="ComplexFood.Calcium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Copper" class="control-label"></label>
+                <input asp-for="ComplexFood.Copper" class="form-control" />
+                <span asp-validation-for="ComplexFood.Copper" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Iron" class="control-label"></label>
+                <input asp-for="ComplexFood.Iron" class="form-control" />
+                <span asp-validation-for="ComplexFood.Iron" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Magnesium" class="control-label"></label>
+                <input asp-for="ComplexFood.Magnesium" class="form-control" />
+                <span asp-validation-for="ComplexFood.Magnesium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Manganese" class="control-label"></label>
+                <input asp-for="ComplexFood.Manganese" class="form-control" />
+                <span asp-validation-for="ComplexFood.Manganese" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Phosphorus" class="control-label"></label>
+                <input asp-for="ComplexFood.Phosphorus" class="form-control" />
+                <span asp-validation-for="ComplexFood.Phosphorus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Potassium" class="control-label"></label>
+                <input asp-for="ComplexFood.Potassium" class="form-control" />
+                <span asp-validation-for="ComplexFood.Potassium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Selenium" class="control-label"></label>
+                <input asp-for="ComplexFood.Selenium" class="form-control" />
+                <span asp-validation-for="ComplexFood.Selenium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Sodium" class="control-label"></label>
+                <input asp-for="ComplexFood.Sodium" class="form-control" />
+                <span asp-validation-for="ComplexFood.Sodium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Zinc" class="control-label"></label>
+                <input asp-for="ComplexFood.Zinc" class="form-control" />
+                <span asp-validation-for="ComplexFood.Zinc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Name" class="control-label"></label>
+                <input asp-for="ComplexFood.Name" class="form-control" />
+                <span asp-validation-for="ComplexFood.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.UserId" class="control-label"></label>
+                <select asp-for="ComplexFood.UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.ServingSize" class="control-label"></label>
+                <input asp-for="ComplexFood.ServingSize" class="form-control" />
+                <span asp-validation-for="ComplexFood.ServingSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComplexFood.Discriminator" class="control-label"></label>
+                <input asp-for="ComplexFood.Discriminator" class="form-control" />
+                <span asp-validation-for="ComplexFood.Discriminator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

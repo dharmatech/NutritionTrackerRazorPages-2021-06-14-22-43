@@ -1,0 +1,43 @@
+@page
+@model NutritionTrackerRazorPages.Pages.ComplexFoodComponents.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ComplexFoodComponent</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFoodComponent.User)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFoodComponent.User.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFoodComponent.ComplexFood)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFoodComponent.ComplexFood.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFoodComponent.SimpleFood)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFoodComponent.SimpleFood.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComplexFoodComponent.Amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComplexFoodComponent.Amount)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ComplexFoodComponent.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

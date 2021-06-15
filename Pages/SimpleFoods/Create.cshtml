@@ -1,0 +1,247 @@
+@page
+@model NutritionTrackerRazorPages.Pages.SimpleFoods.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SimpleFood</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.FoodCategoryId" class="control-label"></label>
+                <select asp-for="SimpleFood.FoodCategoryId" class ="form-control" asp-items="ViewBag.FoodCategoryId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Calories" class="control-label"></label>
+                <input asp-for="SimpleFood.Calories" class="form-control" />
+                <span asp-validation-for="SimpleFood.Calories" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Fat" class="control-label"></label>
+                <input asp-for="SimpleFood.Fat" class="form-control" />
+                <span asp-validation-for="SimpleFood.Fat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.MonounsaturatedFat" class="control-label"></label>
+                <input asp-for="SimpleFood.MonounsaturatedFat" class="form-control" />
+                <span asp-validation-for="SimpleFood.MonounsaturatedFat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.PolyunsaturatedFat" class="control-label"></label>
+                <input asp-for="SimpleFood.PolyunsaturatedFat" class="form-control" />
+                <span asp-validation-for="SimpleFood.PolyunsaturatedFat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Omega3" class="control-label"></label>
+                <input asp-for="SimpleFood.Omega3" class="form-control" />
+                <span asp-validation-for="SimpleFood.Omega3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Omega6" class="control-label"></label>
+                <input asp-for="SimpleFood.Omega6" class="form-control" />
+                <span asp-validation-for="SimpleFood.Omega6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.SaturatedFat" class="control-label"></label>
+                <input asp-for="SimpleFood.SaturatedFat" class="form-control" />
+                <span asp-validation-for="SimpleFood.SaturatedFat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.TransFat" class="control-label"></label>
+                <input asp-for="SimpleFood.TransFat" class="form-control" />
+                <span asp-validation-for="SimpleFood.TransFat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Cholesterol" class="control-label"></label>
+                <input asp-for="SimpleFood.Cholesterol" class="form-control" />
+                <span asp-validation-for="SimpleFood.Cholesterol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Carbohydrates" class="control-label"></label>
+                <input asp-for="SimpleFood.Carbohydrates" class="form-control" />
+                <span asp-validation-for="SimpleFood.Carbohydrates" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Fiber" class="control-label"></label>
+                <input asp-for="SimpleFood.Fiber" class="form-control" />
+                <span asp-validation-for="SimpleFood.Fiber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.SolubleFiber" class="control-label"></label>
+                <input asp-for="SimpleFood.SolubleFiber" class="form-control" />
+                <span asp-validation-for="SimpleFood.SolubleFiber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.InsolubleFiber" class="control-label"></label>
+                <input asp-for="SimpleFood.InsolubleFiber" class="form-control" />
+                <span asp-validation-for="SimpleFood.InsolubleFiber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Starch" class="control-label"></label>
+                <input asp-for="SimpleFood.Starch" class="form-control" />
+                <span asp-validation-for="SimpleFood.Starch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Sugars" class="control-label"></label>
+                <input asp-for="SimpleFood.Sugars" class="form-control" />
+                <span asp-validation-for="SimpleFood.Sugars" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.AddedSugars" class="control-label"></label>
+                <input asp-for="SimpleFood.AddedSugars" class="form-control" />
+                <span asp-validation-for="SimpleFood.AddedSugars" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Protein" class="control-label"></label>
+                <input asp-for="SimpleFood.Protein" class="form-control" />
+                <span asp-validation-for="SimpleFood.Protein" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.VitaminB1" class="control-label"></label>
+                <input asp-for="SimpleFood.VitaminB1" class="form-control" />
+                <span asp-validation-for="SimpleFood.VitaminB1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.VitaminB2" class="control-label"></label>
+                <input asp-for="SimpleFood.VitaminB2" class="form-control" />
+                <span asp-validation-for="SimpleFood.VitaminB2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.VitaminB3" class="control-label"></label>
+                <input asp-for="SimpleFood.VitaminB3" class="form-control" />
+                <span asp-validation-for="SimpleFood.VitaminB3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.VitaminB5" class="control-label"></label>
+                <input asp-for="SimpleFood.VitaminB5" class="form-control" />
+                <span asp-validation-for="SimpleFood.VitaminB5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.VitaminB6" class="control-label"></label>
+                <input asp-for="SimpleFood.VitaminB6" class="form-control" />
+                <span asp-validation-for="SimpleFood.VitaminB6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.VitaminB12" class="control-label"></label>
+                <input asp-for="SimpleFood.VitaminB12" class="form-control" />
+                <span asp-validation-for="SimpleFood.VitaminB12" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Folate" class="control-label"></label>
+                <input asp-for="SimpleFood.Folate" class="form-control" />
+                <span asp-validation-for="SimpleFood.Folate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.VitaminA" class="control-label"></label>
+                <input asp-for="SimpleFood.VitaminA" class="form-control" />
+                <span asp-validation-for="SimpleFood.VitaminA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.VitaminC" class="control-label"></label>
+                <input asp-for="SimpleFood.VitaminC" class="form-control" />
+                <span asp-validation-for="SimpleFood.VitaminC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.VitaminD" class="control-label"></label>
+                <input asp-for="SimpleFood.VitaminD" class="form-control" />
+                <span asp-validation-for="SimpleFood.VitaminD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.VitaminE" class="control-label"></label>
+                <input asp-for="SimpleFood.VitaminE" class="form-control" />
+                <span asp-validation-for="SimpleFood.VitaminE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.VitaminK" class="control-label"></label>
+                <input asp-for="SimpleFood.VitaminK" class="form-control" />
+                <span asp-validation-for="SimpleFood.VitaminK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Calcium" class="control-label"></label>
+                <input asp-for="SimpleFood.Calcium" class="form-control" />
+                <span asp-validation-for="SimpleFood.Calcium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Copper" class="control-label"></label>
+                <input asp-for="SimpleFood.Copper" class="form-control" />
+                <span asp-validation-for="SimpleFood.Copper" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Iron" class="control-label"></label>
+                <input asp-for="SimpleFood.Iron" class="form-control" />
+                <span asp-validation-for="SimpleFood.Iron" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Magnesium" class="control-label"></label>
+                <input asp-for="SimpleFood.Magnesium" class="form-control" />
+                <span asp-validation-for="SimpleFood.Magnesium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Manganese" class="control-label"></label>
+                <input asp-for="SimpleFood.Manganese" class="form-control" />
+                <span asp-validation-for="SimpleFood.Manganese" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Phosphorus" class="control-label"></label>
+                <input asp-for="SimpleFood.Phosphorus" class="form-control" />
+                <span asp-validation-for="SimpleFood.Phosphorus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Potassium" class="control-label"></label>
+                <input asp-for="SimpleFood.Potassium" class="form-control" />
+                <span asp-validation-for="SimpleFood.Potassium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Selenium" class="control-label"></label>
+                <input asp-for="SimpleFood.Selenium" class="form-control" />
+                <span asp-validation-for="SimpleFood.Selenium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Sodium" class="control-label"></label>
+                <input asp-for="SimpleFood.Sodium" class="form-control" />
+                <span asp-validation-for="SimpleFood.Sodium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Zinc" class="control-label"></label>
+                <input asp-for="SimpleFood.Zinc" class="form-control" />
+                <span asp-validation-for="SimpleFood.Zinc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Name" class="control-label"></label>
+                <input asp-for="SimpleFood.Name" class="form-control" />
+                <span asp-validation-for="SimpleFood.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.UserId" class="control-label"></label>
+                <select asp-for="SimpleFood.UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.ServingSize" class="control-label"></label>
+                <input asp-for="SimpleFood.ServingSize" class="form-control" />
+                <span asp-validation-for="SimpleFood.ServingSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SimpleFood.Discriminator" class="control-label"></label>
+                <input asp-for="SimpleFood.Discriminator" class="form-control" />
+                <span asp-validation-for="SimpleFood.Discriminator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

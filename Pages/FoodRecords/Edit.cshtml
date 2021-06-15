@@ -1,0 +1,55 @@
+@page
+@model NutritionTrackerRazorPages.Pages.FoodRecords.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>FoodRecord</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FoodRecord.Id" />
+            <div class="form-group">
+                <label asp-for="FoodRecord.UserId" class="control-label"></label>
+                <input asp-for="FoodRecord.UserId" class="form-control" />
+                <span asp-validation-for="FoodRecord.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FoodRecord.Date" class="control-label"></label>
+                <input asp-for="FoodRecord.Date" class="form-control" />
+                <span asp-validation-for="FoodRecord.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FoodRecord.Time" class="control-label"></label>
+                <input asp-for="FoodRecord.Time" class="form-control" />
+                <span asp-validation-for="FoodRecord.Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FoodRecord.FoodId" class="control-label"></label>
+                <select asp-for="FoodRecord.FoodId" class="form-control" asp-items="ViewBag.FoodId"></select>
+                <span asp-validation-for="FoodRecord.FoodId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FoodRecord.Amount" class="control-label"></label>
+                <input asp-for="FoodRecord.Amount" class="form-control" />
+                <span asp-validation-for="FoodRecord.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
