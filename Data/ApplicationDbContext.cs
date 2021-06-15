@@ -13,10 +13,16 @@ namespace NutritionTrackerRazorPages.Data
             : base(options)
         {
         }
-        public DbSet<NutritionTrackerRazorPages.Models.FoodCategory> FoodCategory { get; set; }
-        public DbSet<NutritionTrackerRazorPages.Models.SimpleFood> SimpleFood { get; set; }
-        public DbSet<NutritionTrackerRazorPages.Models.ComplexFood> ComplexFood { get; set; }
-        public DbSet<NutritionTrackerRazorPages.Models.ComplexFoodComponent> ComplexFoodComponent { get; set; }
-        public DbSet<NutritionTrackerRazorPages.Models.FoodRecord> FoodRecord { get; set; }
+        public DbSet<FoodCategory>         FoodCategory         { get; set; }
+
+        public DbSet<Food>                 Food                 { get; set; }
+        public DbSet<FoodRecord>           FoodRecord           { get; set; }
+
+        public DbSet<SimpleFood>           SimpleFood           { get; set; }
+
+        public DbSet<ComplexFood>          ComplexFood          { get; set; }
+        public DbSet<ComplexFoodComponent> ComplexFoodComponent { get; set; }
+        
     }
 }
+
