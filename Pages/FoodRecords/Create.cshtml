@@ -13,11 +13,7 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FoodRecord.UserId" class="control-label"></label>
-                <input asp-for="FoodRecord.UserId" class="form-control" />
-                <span asp-validation-for="FoodRecord.UserId" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <label asp-for="FoodRecord.Date" class="control-label"></label>
                 <input asp-for="FoodRecord.Date" class="form-control" />
@@ -28,10 +24,12 @@
                 <input asp-for="FoodRecord.Time" class="form-control" />
                 <span asp-validation-for="FoodRecord.Time" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="FoodRecord.FoodId" class="control-label"></label>
-                <select asp-for="FoodRecord.FoodId" class ="form-control" asp-items="ViewBag.FoodId"></select>
+                <select asp-for="FoodRecord.FoodId" class ="form-control" asp-items="Model.SelectList"></select>
             </div>
+
             <div class="form-group">
                 <label asp-for="FoodRecord.Amount" class="control-label"></label>
                 <input asp-for="FoodRecord.Amount" class="form-control" />

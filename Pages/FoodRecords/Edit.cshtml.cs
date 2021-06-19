@@ -31,13 +31,15 @@ namespace NutritionTrackerRazorPages.Pages.FoodRecords
             }
 
             FoodRecord = await _context.FoodRecord
-                .Include(f => f.Food).FirstOrDefaultAsync(m => m.Id == id);
+                .Include(f => f.Food)
+                .Include(f => f.User).FirstOrDefaultAsync(m => m.Id == id);
 
             if (FoodRecord == null)
             {
                 return NotFound();
             }
-           ViewData["FoodId"] = new SelectList(_context.Set<Food>(), "Id", "Discriminator");
+           ViewData["FoodId"] = new SelectList(_context.Food, "Id", "Discriminator");
+           ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return Page();
         }
 
@@ -68,7 +70,7 @@ namespace NutritionTrackerRazorPages.Pages.FoodRecords
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./IndexGrouped");
         }
 
         private bool FoodRecordExists(int id)

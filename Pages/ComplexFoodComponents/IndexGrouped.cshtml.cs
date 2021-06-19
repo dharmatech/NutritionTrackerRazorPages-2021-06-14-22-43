@@ -8,24 +8,26 @@ using Microsoft.EntityFrameworkCore;
 using NutritionTrackerRazorPages.Data;
 using NutritionTrackerRazorPages.Models;
 
-namespace NutritionTrackerRazorPages.Pages.FoodCategories
+namespace NutritionTrackerRazorPages.Pages.ComplexFoodComponents
 {
-    public class IndexModel : PageModel
+    public class IndexGroupedModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        public IndexModel(ApplicationDbContext context)
+        public IndexGroupedModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public IList<FoodCategory> FoodCategory { get;set; }
+        public IList<ComplexFoodComponent> ComplexFoodComponent { get;set; }
 
         public async Task OnGetAsync()
         {
-            FoodCategory = await _context.FoodCategory
-                .Include(foodCategory => foodCategory.User)
-                .Include(f => f.User).ToListAsync();
+            ComplexFoodComponent = await _context.ComplexFoodComponent
+                .Include(c => c.ComplexFood)
+                .Include(c => c.SimpleFood)
+                .Include(c => c.User).ToListAsync();
         }
     }
 }
+

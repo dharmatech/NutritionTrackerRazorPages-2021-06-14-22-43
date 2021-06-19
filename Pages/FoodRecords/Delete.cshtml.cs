@@ -30,7 +30,8 @@ namespace NutritionTrackerRazorPages.Pages.FoodRecords
             }
 
             FoodRecord = await _context.FoodRecord
-                .Include(f => f.Food).FirstOrDefaultAsync(m => m.Id == id);
+                .Include(f => f.Food)
+                .Include(f => f.User).FirstOrDefaultAsync(m => m.Id == id);
 
             if (FoodRecord == null)
             {

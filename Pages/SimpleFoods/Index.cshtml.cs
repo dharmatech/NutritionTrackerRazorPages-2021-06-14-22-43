@@ -24,6 +24,7 @@ namespace NutritionTrackerRazorPages.Pages.SimpleFoods
         public async Task OnGetAsync()
         {
             SimpleFood = await _context.SimpleFood
+                .Include(simpleFood => simpleFood.User)
                 .Include(s => s.FoodCategory)
                 .Include(s => s.User).ToListAsync();
         }

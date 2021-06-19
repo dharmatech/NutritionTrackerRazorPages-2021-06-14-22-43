@@ -1,0 +1,162 @@
+@page
+@model NutritionTrackerRazorPages.Pages.ComplexFoodComponents.IndexGroupedModel
+
+@{
+    ViewData["Title"] = "ComplexFoodComponents Index";
+}
+
+<h1>Complex Food Components</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<div style="overflow: auto;">
+
+    <table style="white-space: nowrap;" class="table">
+        <thead>
+
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th class="table-bordered" colspan="8">Lipids</th>
+                <th class="table-bordered" colspan="7">Carbohydrates</th>
+                <th></th>
+                <th class="table-bordered" colspan="12">Vitamins</th>
+                <th class="table-bordered" colspan="10">Minerals</th>
+                <th></th>
+                <th></th>
+            </tr>
+
+            <tr>
+
+                <th>@Html.DisplayNameFor(model => model.ComplexFoodComponent[0].ComplexFood)</th>
+                <th>@Html.DisplayNameFor(model => model.ComplexFoodComponent[0].SimpleFood)</th>
+                <th>@Html.DisplayNameFor(model => model.ComplexFoodComponent[0].Amount)</th>
+
+                <th>Cals</th>
+                <th>Fat</th>
+                <th>Mono</th>
+                <th>Poly</th>
+                <th>Om3</th>
+                <th>Om6</th>
+                <th>Sat</th>
+                <th>Trans</th>
+                <th>Chol</th>
+                <th>Carb</th>
+                <th>Fiber</th>
+                <th>Sol</th>
+                <th>Insol</th>
+                <th>Starch</th>
+                <th>Sug</th>
+                <th>Add</th>
+                <th>Pro</th>
+                <th>B1</th>
+                <th>B2</th>
+                <th>B3</th>
+                <th>B5</th>
+                <th>B6</th>
+                <th>B12</th>
+                <th>Fol</th>
+                <th>A</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+                <th>K</th>
+                <th>Cal</th>
+                <th>Cop</th>
+                <th>Iron</th>
+                <th>Mag</th>
+                <th>Mang</th>
+                <th>Pho</th>
+                <th>Pot</th>
+                <th>Sel</th>
+                <th>Sod</th>
+                <th>Zinc</th>
+
+                <th>@Html.DisplayNameFor(model => model.ComplexFoodComponent[0].User)</th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var group_complex_food in Model.ComplexFoodComponent.GroupBy(complexFoodComponent => complexFoodComponent.ComplexFood))
+            {
+                var i = 0;
+
+                @foreach (var item in group_complex_food)
+                {
+                    <tr>
+                        @if (i == 0)
+                        {
+                            <td>@Html.DisplayFor(modelItem => item.ComplexFood.Name)</td>
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+
+                        <td>@Html.DisplayFor(modelItem => item.SimpleFood.Name)</td>
+                        <td>@Utils.Misc.RoundData(item.Amount)</td>
+
+                        <td>@Utils.Misc.RoundData(item.Calories)</td>
+                        <td>@Utils.Misc.RoundData(item.Fat)</td>
+                        <td>@Utils.Misc.RoundData(item.MonounsaturatedFat)</td>
+                        <td>@Utils.Misc.RoundData(item.PolyunsaturatedFat)</td>
+                        <td>@Utils.Misc.RoundData(item.Omega3)</td>
+                        <td>@Utils.Misc.RoundData(item.Omega6)</td>
+                        <td>@Utils.Misc.RoundData(item.SaturatedFat)</td>
+                        <td>@Utils.Misc.RoundData(item.TransFat)</td>
+                        <td>@Utils.Misc.RoundData(item.Cholesterol)</td>
+                        <td>@Utils.Misc.RoundData(item.Carbohydrates)</td>
+                        <td>@Utils.Misc.RoundData(item.Fiber)</td>
+                        <td>@Utils.Misc.RoundData(item.SolubleFiber)</td>
+                        <td>@Utils.Misc.RoundData(item.InsolubleFiber)</td>
+                        <td>@Utils.Misc.RoundData(item.Starch)</td>
+                        <td>@Utils.Misc.RoundData(item.Sugars)</td>
+                        <td>@Utils.Misc.RoundData(item.AddedSugars)</td>
+                        <td>@Utils.Misc.RoundData(item.Protein)</td>
+                        <td>@Utils.Misc.RoundData(item.VitaminB1)</td>
+                        <td>@Utils.Misc.RoundData(item.VitaminB2)</td>
+                        <td>@Utils.Misc.RoundData(item.VitaminB3)</td>
+                        <td>@Utils.Misc.RoundData(item.VitaminB5)</td>
+                        <td>@Utils.Misc.RoundData(item.VitaminB6)</td>
+                        <td>@Utils.Misc.RoundData(item.VitaminB12)</td>
+                        <td>@Utils.Misc.RoundData(item.Folate)</td>
+                        <td>@Utils.Misc.RoundData(item.VitaminA)</td>
+                        <td>@Utils.Misc.RoundData(item.VitaminC)</td>
+                        <td>@Utils.Misc.RoundData(item.VitaminD)</td>
+                        <td>@Utils.Misc.RoundData(item.VitaminE)</td>
+                        <td>@Utils.Misc.RoundData(item.VitaminK)</td>
+                        <td>@Utils.Misc.RoundData(item.Calcium)</td>
+                        <td>@Utils.Misc.RoundData(item.Copper)</td>
+                        <td>@Utils.Misc.RoundData(item.Iron)</td>
+                        <td>@Utils.Misc.RoundData(item.Magnesium)</td>
+                        <td>@Utils.Misc.RoundData(item.Manganese)</td>
+                        <td>@Utils.Misc.RoundData(item.Phosphorus)</td>
+                        <td>@Utils.Misc.RoundData(item.Potassium)</td>
+                        <td>@Utils.Misc.RoundData(item.Selenium)</td>
+                        <td>@Utils.Misc.RoundData(item.Sodium)</td>
+                        <td>@Utils.Misc.RoundData(item.Zinc)</td>
+
+                        <td>@Html.DisplayFor(modelItem => item.User.UserName)</td>
+
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+
+                    { i++; }
+                }
+            }
+
+        </tbody>
+    </table>
+
+</div>
+

@@ -3,27 +3,64 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - NutritionTrackerRazorPages</title>
+    <title>@ViewData["Title"] - NT 06-14</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+
 <body>
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">NutritionTrackerRazorPages</a>
+
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Nutrition Tracker</a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/FoodCategories/Index">Food Categories</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/SimpleFoods/Index">Simple Foods</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/ComplexFoods/Index">Complex Foods</a>
+                        </li>
+
+                        @*<li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/ComplexFoodComponents/Index">Complex Food Components</a>
+                        </li>*@
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/ComplexFoodComponents/IndexGrouped">Complex Food Components</a>
+                        </li>
+
+                        @*<li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-page="/FoodRecords/Index">Food Records</a></li>*@
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/FoodRecords/IndexGrouped">Food Records</a>
+                        </li>
+
+                        @*<li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/FoodRecords/IndexTabulator">Food Tabulator</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/FoodRecords/IndexDevExtreme">Food Records DevExtreme</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/FoodRecords/IndexWebix">Food Records Webix</a>
+                        </li>*@
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -39,6 +76,7 @@
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - NutritionTrackerRazorPages - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            - 06-14
         </div>
     </footer>
 
