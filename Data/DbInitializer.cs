@@ -89,27 +89,30 @@ namespace NutritionTrackerRazorPages.Data
                 var banana  = new SimpleFood() { UserId = admin_id, Name = "Banana (g)", FoodCategory = fruit, ServingSize = 100, Calories = 89, Fat = 0.3m, Carbohydrates = 22.8m, Protein = 1.1m };
                 var salmon  = new SimpleFood() { UserId = admin_id, Name = "Salmon (g)", FoodCategory = fish, ServingSize = 100, Calories = 153, Fat = 7.3m, Carbohydrates = 0, Protein = 21.9m };
 
-                var A_beef80 = new SimpleFood() { UserId = admin_id, Name = "Ground Beef 80/20 (g)", FoodCategory = meat, ServingSize = 100, Calories = 254, Fat = 16.20m, Carbohydrates = 0, Protein = 25.30m };
-                var A_basmati = new SimpleFood() { UserId = admin_id, Name = "Basmati Rice (g)", FoodCategory = grain, ServingSize = 45, Calories = 160, Fat = 0.5m, Carbohydrates = 36, Protein = 3 };
-                var A_avocado = new SimpleFood() { UserId = admin_id, Name = "Avocado (g)", FoodCategory = fruit, ServingSize = 100, Calories = 167, Fat = 15.40m, Carbohydrates = 8.6m, Protein = 2 };
-                var A_lentils = new SimpleFood() { UserId = admin_id, Name = "Lentils (g)", FoodCategory = legume, ServingSize = 35, Calories = 100, Fat = 0.5m, Carbohydrates = 23m, Protein = 8 };
-                var A_lima = new SimpleFood() { UserId = admin_id, Name = "Lima Beans (g)", FoodCategory = legume, ServingSize = 35, Calories = 100, Fat = 0.5m, Carbohydrates = 22m, Protein = 7 };
-                var A_onion = new SimpleFood() { UserId = admin_id, Name = "Onion (g)", FoodCategory = vegetable, ServingSize = 100, Calories = 40, Fat = 0.10m, Carbohydrates = 9.3m, Protein = 1.1m };
-                var A_yam = new SimpleFood() { UserId = admin_id, Name = "Yam (g)", FoodCategory = vegetable, ServingSize = 100, Calories = 118, Fat = 0.2m, Carbohydrates = 27.9m, Protein = 1.5m };
-                var A_apple = new SimpleFood() { UserId = admin_id, Name = "Apple (g)", FoodCategory = fruit, ServingSize = 100, Calories = 52, Fat = 0.2m, Carbohydrates = 13.8m, Protein = 0.3m };
-                var A_banana = new SimpleFood() { UserId = admin_id, Name = "Banana (g)", FoodCategory = fruit, ServingSize = 100, Calories = 89, Fat = 0.3m, Carbohydrates = 22.8m, Protein = 1.1m };
-                var A_salmon = new SimpleFood() { UserId = admin_id, Name = "Salmon (g)", FoodCategory = fish, ServingSize = 100, Calories = 153, Fat = 7.3m, Carbohydrates = 0, Protein = 21.9m };
+                var blueberries = new SimpleFood() { UserId = alan_id, Name = "Blueberries (g)", FoodCategory = fruit, ServingSize = 100, Calories = 57, Fat = 0.3m, Carbohydrates = 14.5m, Protein = 0.7m };
+                var raspberries = new SimpleFood() { UserId = alan_id, Name = "Raspberries (g)", FoodCategory = fruit, ServingSize = 100, Calories = 52, Fat = 0.7m, Carbohydrates = 11.9m, Protein = 1.2m };
 
-                var B_beef80 = new SimpleFood() { UserId = admin_id, Name = "Ground Beef 80/20 (g)", FoodCategory = meat, ServingSize = 100, Calories = 254, Fat = 16.20m, Carbohydrates = 0, Protein = 25.30m };
-                var B_basmati = new SimpleFood() { UserId = admin_id, Name = "Basmati Rice (g)", FoodCategory = grain, ServingSize = 45, Calories = 160, Fat = 0.5m, Carbohydrates = 36, Protein = 3 };
-                var B_avocado = new SimpleFood() { UserId = admin_id, Name = "Avocado (g)", FoodCategory = fruit, ServingSize = 100, Calories = 167, Fat = 15.40m, Carbohydrates = 8.6m, Protein = 2 };
-                var B_lentils = new SimpleFood() { UserId = admin_id, Name = "Lentils (g)", FoodCategory = legume, ServingSize = 35, Calories = 100, Fat = 0.5m, Carbohydrates = 23m, Protein = 8 };
-                var B_lima = new SimpleFood() { UserId = admin_id, Name = "Lima Beans (g)", FoodCategory = legume, ServingSize = 35, Calories = 100, Fat = 0.5m, Carbohydrates = 22m, Protein = 7 };
-                var B_onion = new SimpleFood() { UserId = admin_id, Name = "Onion (g)", FoodCategory = vegetable, ServingSize = 100, Calories = 40, Fat = 0.10m, Carbohydrates = 9.3m, Protein = 1.1m };
-                var B_yam = new SimpleFood() { UserId = admin_id, Name = "Yam (g)", FoodCategory = vegetable, ServingSize = 100, Calories = 118, Fat = 0.2m, Carbohydrates = 27.9m, Protein = 1.5m };
-                var B_apple = new SimpleFood() { UserId = admin_id, Name = "Apple (g)", FoodCategory = fruit, ServingSize = 100, Calories = 52, Fat = 0.2m, Carbohydrates = 13.8m, Protein = 0.3m };
-                var B_banana = new SimpleFood() { UserId = admin_id, Name = "Banana (g)", FoodCategory = fruit, ServingSize = 100, Calories = 89, Fat = 0.3m, Carbohydrates = 22.8m, Protein = 1.1m };
-                var B_salmon = new SimpleFood() { UserId = admin_id, Name = "Salmon (g)", FoodCategory = fish, ServingSize = 100, Calories = 153, Fat = 7.3m, Carbohydrates = 0, Protein = 21.9m };
+                //var A_beef80 = new SimpleFood() { UserId = admin_id, Name = "Ground Beef 80/20 (g)", FoodCategory = meat, ServingSize = 100, Calories = 254, Fat = 16.20m, Carbohydrates = 0, Protein = 25.30m };
+                //var A_basmati = new SimpleFood() { UserId = admin_id, Name = "Basmati Rice (g)", FoodCategory = grain, ServingSize = 45, Calories = 160, Fat = 0.5m, Carbohydrates = 36, Protein = 3 };
+                //var A_avocado = new SimpleFood() { UserId = admin_id, Name = "Avocado (g)", FoodCategory = fruit, ServingSize = 100, Calories = 167, Fat = 15.40m, Carbohydrates = 8.6m, Protein = 2 };
+                //var A_lentils = new SimpleFood() { UserId = admin_id, Name = "Lentils (g)", FoodCategory = legume, ServingSize = 35, Calories = 100, Fat = 0.5m, Carbohydrates = 23m, Protein = 8 };
+                //var A_lima = new SimpleFood() { UserId = admin_id, Name = "Lima Beans (g)", FoodCategory = legume, ServingSize = 35, Calories = 100, Fat = 0.5m, Carbohydrates = 22m, Protein = 7 };
+                //var A_onion = new SimpleFood() { UserId = admin_id, Name = "Onion (g)", FoodCategory = vegetable, ServingSize = 100, Calories = 40, Fat = 0.10m, Carbohydrates = 9.3m, Protein = 1.1m };
+                //var A_yam = new SimpleFood() { UserId = admin_id, Name = "Yam (g)", FoodCategory = vegetable, ServingSize = 100, Calories = 118, Fat = 0.2m, Carbohydrates = 27.9m, Protein = 1.5m };
+                //var A_apple = new SimpleFood() { UserId = admin_id, Name = "Apple (g)", FoodCategory = fruit, ServingSize = 100, Calories = 52, Fat = 0.2m, Carbohydrates = 13.8m, Protein = 0.3m };
+                //var A_banana = new SimpleFood() { UserId = admin_id, Name = "Banana (g)", FoodCategory = fruit, ServingSize = 100, Calories = 89, Fat = 0.3m, Carbohydrates = 22.8m, Protein = 1.1m };
+                //var A_salmon = new SimpleFood() { UserId = admin_id, Name = "Salmon (g)", FoodCategory = fish, ServingSize = 100, Calories = 153, Fat = 7.3m, Carbohydrates = 0, Protein = 21.9m };
+
+                //var B_beef80 = new SimpleFood() { UserId = admin_id, Name = "Ground Beef 80/20 (g)", FoodCategory = meat, ServingSize = 100, Calories = 254, Fat = 16.20m, Carbohydrates = 0, Protein = 25.30m };
+                //var B_basmati = new SimpleFood() { UserId = admin_id, Name = "Basmati Rice (g)", FoodCategory = grain, ServingSize = 45, Calories = 160, Fat = 0.5m, Carbohydrates = 36, Protein = 3 };
+                //var B_avocado = new SimpleFood() { UserId = admin_id, Name = "Avocado (g)", FoodCategory = fruit, ServingSize = 100, Calories = 167, Fat = 15.40m, Carbohydrates = 8.6m, Protein = 2 };
+                //var B_lentils = new SimpleFood() { UserId = admin_id, Name = "Lentils (g)", FoodCategory = legume, ServingSize = 35, Calories = 100, Fat = 0.5m, Carbohydrates = 23m, Protein = 8 };
+                //var B_lima = new SimpleFood() { UserId = admin_id, Name = "Lima Beans (g)", FoodCategory = legume, ServingSize = 35, Calories = 100, Fat = 0.5m, Carbohydrates = 22m, Protein = 7 };
+                //var B_onion = new SimpleFood() { UserId = admin_id, Name = "Onion (g)", FoodCategory = vegetable, ServingSize = 100, Calories = 40, Fat = 0.10m, Carbohydrates = 9.3m, Protein = 1.1m };
+                //var B_yam = new SimpleFood() { UserId = admin_id, Name = "Yam (g)", FoodCategory = vegetable, ServingSize = 100, Calories = 118, Fat = 0.2m, Carbohydrates = 27.9m, Protein = 1.5m };
+                //var B_apple = new SimpleFood() { UserId = admin_id, Name = "Apple (g)", FoodCategory = fruit, ServingSize = 100, Calories = 52, Fat = 0.2m, Carbohydrates = 13.8m, Protein = 0.3m };
+                //var B_banana = new SimpleFood() { UserId = admin_id, Name = "Banana (g)", FoodCategory = fruit, ServingSize = 100, Calories = 89, Fat = 0.3m, Carbohydrates = 22.8m, Protein = 1.1m };
+                //var B_salmon = new SimpleFood() { UserId = admin_id, Name = "Salmon (g)", FoodCategory = fish, ServingSize = 100, Calories = 153, Fat = 7.3m, Carbohydrates = 0, Protein = 21.9m };
 
 
                 var BornierMustard = new SimpleFood() { UserId = linus_id, Name = "Organic Wholegrain Dijon Mustard [Bornier] (g)", FoodCategory = condiment, ServingSize = 5, Calories = 10, Fat = 0.5m, Sodium = 105, Carbohydrates = 0, Protein = 0 };
@@ -117,32 +120,35 @@ namespace NutritionTrackerRazorPages.Data
 
                 context.SimpleFood.AddRange(beef80, salmon, basmati, avocado, lentils, lima, onion, yam, apple, banana,
                     LuciniTomatoBasil,
-                    BornierMustard);
-
-                context.SimpleFood.AddRange(
-                    A_beef80, 
-                    A_salmon, 
-                    A_basmati, 
-                    A_avocado, 
-                    A_lentils, 
-                    A_lima, 
-                    A_onion, 
-                    A_yam, 
-                    A_apple, 
-                    A_banana,
-
-                    B_beef80,
-                    B_salmon,
-                    B_basmati,
-                    B_avocado,
-                    B_lentils,
-                    B_lima,
-                    B_onion,
-                    B_yam,
-                    B_apple,
-                    B_banana
-
+                    BornierMustard,
+                    blueberries,
+                    raspberries
                     );
+
+                //context.SimpleFood.AddRange(
+                //    A_beef80, 
+                //    A_salmon, 
+                //    A_basmati, 
+                //    A_avocado, 
+                //    A_lentils, 
+                //    A_lima, 
+                //    A_onion, 
+                //    A_yam, 
+                //    A_apple, 
+                //    A_banana,
+
+                //    B_beef80,
+                //    B_salmon,
+                //    B_basmati,
+                //    B_avocado,
+                //    B_lentils,
+                //    B_lima,
+                //    B_onion,
+                //    B_yam,
+                //    B_apple,
+                //    B_banana
+
+                //    );
 
                 context.SaveChanges();
 
