@@ -11,7 +11,7 @@
     <a asp-page="Create">Create New</a>
 </p>
 
-<div style="overflow: auto;">
+<div style="height: 70vh; overflow: auto;">
 
     <table style="white-space: nowrap;" class="table">
         <thead>
@@ -31,9 +31,9 @@
 
 
             <tr>
-                <th>@Html.DisplayNameFor(model => model.SimpleFood[0].Name)</th>
-                <th>@Html.DisplayNameFor(model => model.SimpleFood[0].FoodCategory)</th>
-                <th>@Html.DisplayNameFor(model => model.SimpleFood[0].ServingSize)</th>
+                <th>@Html.DisplayNameFor(model => model.SimpleFoods[0].Name)</th>
+                <th>@Html.DisplayNameFor(model => model.SimpleFoods[0].FoodCategory)</th>
+                <th>@Html.DisplayNameFor(model => model.SimpleFoods[0].ServingSize)</th>
 
                 <th>Cals</th>
                 <th>Fat</th>
@@ -75,13 +75,13 @@
                 <th>Sod</th>
                 <th>Zinc</th>
 
-                <th>@Html.DisplayNameFor(model => model.SimpleFood[0].User)</th>
+                <th>@Html.DisplayNameFor(model => model.SimpleFoods[0].User)</th>
 
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.SimpleFood)
+            @foreach (var item in Model.SimpleFoods)
             {
                 <tr>
                     <td>@Html.DisplayFor(modelItem => item.Name)</td>
