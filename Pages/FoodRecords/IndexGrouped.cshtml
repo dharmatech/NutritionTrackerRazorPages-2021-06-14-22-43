@@ -1,75 +1,7 @@
-@*@page
-    @model NutritionTrackerRazorPages.Pages.FoodRecords.IndexGroupedModel
-
-    @{
-        ViewData["Title"] = "Index";
-    }
-
-    <h1>Index</h1>
-
-    <p>
-        <a asp-page="Create">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.FoodRecord[0].Date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FoodRecord[0].Time)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FoodRecord[0].Food)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FoodRecord[0].Amount)
-                </th>
-
-                <th>
-                    @Html.DisplayNameFor(model => model.FoodRecord[0].User)
-                </th>
-
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model.FoodRecord) {
-            <tr>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Time)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Food.Discriminator)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Amount)
-                </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.UserName)
-                </td>
-
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-    }
-        </tbody>
-    </table>*@
-
 @page
 @model NutritionTrackerRazorPages.Pages.FoodRecords.IndexGroupedModel
 
-@{
-    ViewData["Title"] = "Index";
-}
+@{ ViewData["Title"] = "Food Records"; }
 
 <h1>Food Records</h1>
 
