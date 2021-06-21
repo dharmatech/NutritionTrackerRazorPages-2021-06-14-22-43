@@ -12,16 +12,17 @@ namespace NutritionTrackerRazorPages.Pages.FoodCategories
 {
     public class CreateModel : PageModel
     {
-        private readonly NutritionTrackerRazorPages.Data.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public CreateModel(NutritionTrackerRazorPages.Data.ApplicationDbContext context)
+        public CreateModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
         public IActionResult OnGet()
         {
-        ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "UserName");
+            
             return Page();
         }
 
@@ -37,6 +38,7 @@ namespace NutritionTrackerRazorPages.Pages.FoodCategories
             }
 
             _context.FoodCategory.Add(FoodCategory);
+
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
