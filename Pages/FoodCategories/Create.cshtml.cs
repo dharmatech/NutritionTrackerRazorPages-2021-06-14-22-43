@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,9 +15,12 @@ namespace NutritionTrackerRazorPages.Pages.FoodCategories
     {
         private readonly ApplicationDbContext _context;
 
-        public CreateModel(ApplicationDbContext context)
+        private readonly UserManager<IdentityUser> _userManager;
+
+        public CreateModel(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         public IActionResult OnGet()
@@ -36,6 +40,8 @@ namespace NutritionTrackerRazorPages.Pages.FoodCategories
             {
                 return Page();
             }
+
+            
 
             _context.FoodCategory.Add(FoodCategory);
 
