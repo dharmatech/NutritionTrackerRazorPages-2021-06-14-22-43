@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -12,11 +14,18 @@ namespace NutritionTrackerRazorPages.Pages.FoodCategories
 {
     public class DeleteModel : PageModel
     {
-        private readonly NutritionTrackerRazorPages.Data.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
+        private IAuthorizationService AuthorizationService { get; }
+        private UserManager<IdentityUser> UserManager { get; }
 
-        public DeleteModel(NutritionTrackerRazorPages.Data.ApplicationDbContext context)
+        public DeleteModel(
+            ApplicationDbContext context, 
+            IAuthorizationService authorizationService, 
+            UserManager<IdentityUser> userManager)
         {
             _context = context;
+            AuthorizationService = authorizationService;
+            UserManager = userManager;
         }
 
         [BindProperty]
