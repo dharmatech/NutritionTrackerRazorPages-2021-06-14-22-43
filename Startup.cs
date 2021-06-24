@@ -12,6 +12,8 @@ using NutritionTrackerRazorPages.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authorization;
+using NutritionTrackerRazorPages.Authorization;
 
 namespace NutritionTrackerRazorPages
 {
@@ -30,10 +32,24 @@ namespace NutritionTrackerRazorPages
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDatabaseDeveloperPageExceptionFilter();
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+
+            services
+                .AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddRazorPages();
+
+            services.AddAuthorization(options => {
+                options.FallbackPolicy = 
+                    new AuthorizationPolicyBuilder()
+                        .RequireAuthenticatedUser()
+                        .Build();
+            });
+
+            services.AddScoped<IAuthorizationHandler, IUserOwnedOwnerAuthorizationHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
