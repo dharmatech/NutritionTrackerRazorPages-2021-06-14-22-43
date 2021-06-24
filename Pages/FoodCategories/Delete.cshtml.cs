@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using NutritionTrackerRazorPages.Authorization;
 using NutritionTrackerRazorPages.Data;
 using NutritionTrackerRazorPages.Models;
 
@@ -50,18 +51,25 @@ namespace NutritionTrackerRazorPages.Pages.FoodCategories
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null) return NotFound();
+            
             FoodCategory = await _context.FoodCategory.FindAsync(id);
 
-            if (FoodCategory != null)
-            {
-                _context.FoodCategory.Remove(FoodCategory);
-                await _context.SaveChangesAsync();
-            }
+            //if (FoodCategory != null)
+            //{
+            //    _context.FoodCategory.Remove(FoodCategory);
+            //    await _context.SaveChangesAsync();
+            //}
+
+            if (FoodCategory == null) return NotFound();
+
+            var is_authorized = await AuthorizationService.AuthorizeAsync(User, FoodCategory, ItemOperations.Delete);
+
+            if (is_authorized.Succeeded == false) return Forbid();
+
+            _context.FoodCategory.Remove(FoodCategory);
+
+            await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }

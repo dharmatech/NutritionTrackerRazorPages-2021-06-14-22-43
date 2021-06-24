@@ -50,6 +50,8 @@ namespace NutritionTrackerRazorPages
             });
 
             services.AddScoped<IAuthorizationHandler, IUserOwnedOwnerAuthorizationHandler>();
+
+            //services.AddScoped<IAuthorizationHandler, FoodCategoryOwnerAuthorizationHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

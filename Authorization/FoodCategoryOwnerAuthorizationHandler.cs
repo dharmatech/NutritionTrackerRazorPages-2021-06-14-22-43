@@ -16,8 +16,8 @@ namespace NutritionTrackerRazorPages.Authorization
         public FoodCategoryOwnerAuthorizationHandler(UserManager<IdentityUser> userManager) => _userManager = userManager;
 
         protected override Task HandleRequirementAsync(
-            AuthorizationHandlerContext context, 
-            OperationAuthorizationRequirement requirement, 
+            AuthorizationHandlerContext context,
+            OperationAuthorizationRequirement requirement,
             FoodCategory resource)
         {
             if (context.User == null || resource == null) return Task.CompletedTask;
