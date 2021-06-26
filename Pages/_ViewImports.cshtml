@@ -1,5 +1,13 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using NutritionTrackerRazorPages
 @using NutritionTrackerRazorPages.Data
+
+@using Microsoft.AspNetCore.Authorization
+@using NutritionTrackerRazorPages.Models
+@using NutritionTrackerRazorPages.Authorization
+
+@inject IAuthorizationService AuthorizationService
+
 @namespace NutritionTrackerRazorPages.Pages
+
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

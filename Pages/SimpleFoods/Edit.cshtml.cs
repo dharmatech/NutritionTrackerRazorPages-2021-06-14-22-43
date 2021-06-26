@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using NutritionTrackerRazorPages.Authorization;
 using NutritionTrackerRazorPages.Data;
 using NutritionTrackerRazorPages.Models;
 
@@ -13,11 +15,14 @@ namespace NutritionTrackerRazorPages.Pages.SimpleFoods
 {
     public class EditModel : PageModel
     {
-        private readonly NutritionTrackerRazorPages.Data.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public EditModel(NutritionTrackerRazorPages.Data.ApplicationDbContext context)
+        private IAuthorizationService AuthorizationService { get; }
+
+        public EditModel(ApplicationDbContext context, IAuthorizationService authorizationService)
         {
             _context = context;
+            AuthorizationService = authorizationService;
         }
 
         [BindProperty]
@@ -25,21 +30,25 @@ namespace NutritionTrackerRazorPages.Pages.SimpleFoods
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null) return NotFound();
+            
             SimpleFood = await _context.SimpleFood
                 .Include(s => s.FoodCategory)
-                .Include(s => s.User).FirstOrDefaultAsync(m => m.Id == id);
+                .Include(s => s.User)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
-            if (SimpleFood == null)
+            if (SimpleFood == null) return NotFound();
+
             {
-                return NotFound();
+                var is_authorized = await AuthorizationService.AuthorizeAsync(User, SimpleFood, ItemOperations.Edit);
+
+                if (is_authorized.Succeeded == false) return Forbid();
             }
-           ViewData["FoodCategoryId"] = new SelectList(_context.FoodCategory, "Id", "Id");
-           ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+
+            ViewData["FoodCategoryId"] = new SelectList(_context.FoodCategory, "Id", "Id");
+           
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+            
             return Page();
         }
 
@@ -53,6 +62,12 @@ namespace NutritionTrackerRazorPages.Pages.SimpleFoods
             }
 
             _context.Attach(SimpleFood).State = EntityState.Modified;
+
+            {
+                var is_authorized = await AuthorizationService.AuthorizeAsync(User, SimpleFood, ItemOperations.Edit);
+
+                if (is_authorized.Succeeded == false) return Forbid();
+            }
 
             try
             {
