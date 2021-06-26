@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -14,9 +15,12 @@ namespace NutritionTrackerRazorPages.Pages.FoodCategories
     {
         private readonly ApplicationDbContext _context;
 
-        public IndexModel(ApplicationDbContext context)
+        private IAuthorizationService AuthorizationService { get; }
+
+        public IndexModel(ApplicationDbContext context, IAuthorizationService authorizationService)
         {
             _context = context;
+            AuthorizationService = authorizationService;
         }
 
         public IList<FoodCategory> FoodCategory { get;set; }

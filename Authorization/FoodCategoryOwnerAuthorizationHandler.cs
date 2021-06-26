@@ -22,8 +22,10 @@ namespace NutritionTrackerRazorPages.Authorization
         {
             if (context.User == null || resource == null) return Task.CompletedTask;
 
-            if (requirement.Name != Constants.DeleteOperationName) return Task.CompletedTask;
-
+            if (requirement.Name != Constants.DeleteOperationName &&
+                requirement.Name != Constants.EditOperationName) 
+                return Task.CompletedTask;
+                                                
             if (resource.UserId == _userManager.GetUserId(context.User)) context.Succeed(requirement);
 
             return Task.CompletedTask;

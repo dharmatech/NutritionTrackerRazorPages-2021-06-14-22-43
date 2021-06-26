@@ -34,18 +34,19 @@ namespace NutritionTrackerRazorPages.Pages.FoodCategories
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null) return NotFound();
+          
             FoodCategory = await _context.FoodCategory
                 .Include(f => f.User).FirstOrDefaultAsync(m => m.Id == id);
 
-            if (FoodCategory == null)
+            if (FoodCategory == null) return NotFound();
+
             {
-                return NotFound();
+                var is_authorized = await AuthorizationService.AuthorizeAsync(User, FoodCategory, ItemOperations.Delete);
+
+                if (is_authorized.Succeeded == false) return Forbid();
             }
+
             return Page();
         }
 
@@ -54,12 +55,6 @@ namespace NutritionTrackerRazorPages.Pages.FoodCategories
             if (id == null) return NotFound();
             
             FoodCategory = await _context.FoodCategory.FindAsync(id);
-
-            //if (FoodCategory != null)
-            //{
-            //    _context.FoodCategory.Remove(FoodCategory);
-            //    await _context.SaveChangesAsync();
-            //}
 
             if (FoodCategory == null) return NotFound();
 
