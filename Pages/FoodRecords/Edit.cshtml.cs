@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using NutritionTrackerRazorPages.Authorization;
 using NutritionTrackerRazorPages.Data;
 using NutritionTrackerRazorPages.Models;
 
@@ -13,11 +15,14 @@ namespace NutritionTrackerRazorPages.Pages.FoodRecords
 {
     public class EditModel : PageModel
     {
-        private readonly NutritionTrackerRazorPages.Data.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public EditModel(NutritionTrackerRazorPages.Data.ApplicationDbContext context)
+        private IAuthorizationService AuthorizationService { get; }
+
+        public EditModel(ApplicationDbContext context, IAuthorizationService authorizationService)
         {
             _context = context;
+            AuthorizationService = authorizationService;
         }
 
         [BindProperty]
@@ -38,8 +43,15 @@ namespace NutritionTrackerRazorPages.Pages.FoodRecords
             {
                 return NotFound();
             }
-           ViewData["FoodId"] = new SelectList(_context.Food, "Id", "Discriminator");
-           ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+
+            {
+                var authorizationResult = await AuthorizationService.AuthorizeAsync(User, FoodRecord, ItemOperations.Edit);
+
+                if (authorizationResult.Succeeded == false) return Forbid();
+            }
+
+            ViewData["FoodId"] = new SelectList(_context.Food, "Id", "Discriminator");
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return Page();
         }
 
@@ -53,6 +65,12 @@ namespace NutritionTrackerRazorPages.Pages.FoodRecords
             }
 
             _context.Attach(FoodRecord).State = EntityState.Modified;
+
+            {
+                var authorizationResult = await AuthorizationService.AuthorizeAsync(User, FoodRecord, ItemOperations.Edit);
+
+                if (authorizationResult.Succeeded == false) return Forbid();
+            }
 
             try
             {

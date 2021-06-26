@@ -51,7 +51,11 @@ namespace NutritionTrackerRazorPages
                         
             services
                 .AddScoped<IAuthorizationHandler, FoodCategoryOwnerAuthorizationHandler>()
-                .AddScoped<IAuthorizationHandler, SimpleFoodOwnerAuthorizationHandler>();
+                .AddScoped<IAuthorizationHandler, SimpleFoodOwnerAuthorizationHandler>()
+                .AddScoped<IAuthorizationHandler, ComplexFoodOwnerAuthorizationHandler>()
+                .AddScoped<IAuthorizationHandler, ComplexFoodComponentOwnerAuthorizationHandler>()
+                .AddScoped<IAuthorizationHandler, FoodRecordOwnerAuthorizationHandler>()
+                ;
             
         }
 

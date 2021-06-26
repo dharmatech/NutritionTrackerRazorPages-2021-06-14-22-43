@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using NutritionTrackerRazorPages.Authorization;
 using NutritionTrackerRazorPages.Data;
 using NutritionTrackerRazorPages.Models;
 
@@ -12,11 +14,13 @@ namespace NutritionTrackerRazorPages.Pages.FoodRecords
 {
     public class DeleteModel : PageModel
     {
-        private readonly NutritionTrackerRazorPages.Data.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
+        private IAuthorizationService AuthorizationService { get; }
 
-        public DeleteModel(NutritionTrackerRazorPages.Data.ApplicationDbContext context)
+        public DeleteModel(ApplicationDbContext context, IAuthorizationService authorizationService)
         {
             _context = context;
+            AuthorizationService = authorizationService;
         }
 
         [BindProperty]
@@ -37,6 +41,13 @@ namespace NutritionTrackerRazorPages.Pages.FoodRecords
             {
                 return NotFound();
             }
+
+            {
+                var authorizationResult = await AuthorizationService.AuthorizeAsync(User, FoodRecord, ItemOperations.Delete);
+
+                if (authorizationResult.Succeeded == false) return Forbid();
+            }
+
             return Page();
         }
 
@@ -51,6 +62,12 @@ namespace NutritionTrackerRazorPages.Pages.FoodRecords
 
             if (FoodRecord != null)
             {
+                {
+                    var authorizationResult = await AuthorizationService.AuthorizeAsync(User, FoodRecord, ItemOperations.Delete);
+
+                    if (authorizationResult.Succeeded == false) return Forbid();
+                }
+
                 _context.FoodRecord.Remove(FoodRecord);
                 await _context.SaveChangesAsync();
             }

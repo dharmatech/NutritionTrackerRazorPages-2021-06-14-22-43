@@ -40,9 +40,9 @@ namespace NutritionTrackerRazorPages.Pages.SimpleFoods
             if (SimpleFood == null) return NotFound();
 
             {
-                var is_authorized = await AuthorizationService.AuthorizeAsync(User, SimpleFood, ItemOperations.Edit);
+                var authorizationResult = await AuthorizationService.AuthorizeAsync(User, SimpleFood, ItemOperations.Edit);
 
-                if (is_authorized.Succeeded == false) return Forbid();
+                if (authorizationResult.Succeeded == false) return Forbid();
             }
 
             ViewData["FoodCategoryId"] = new SelectList(_context.FoodCategory, "Id", "Id");
@@ -56,17 +56,14 @@ namespace NutritionTrackerRazorPages.Pages.SimpleFoods
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
+            if (!ModelState.IsValid) return Page();
+            
             _context.Attach(SimpleFood).State = EntityState.Modified;
 
             {
-                var is_authorized = await AuthorizationService.AuthorizeAsync(User, SimpleFood, ItemOperations.Edit);
+                var authorizationResult = await AuthorizationService.AuthorizeAsync(User, SimpleFood, ItemOperations.Edit);
 
-                if (is_authorized.Succeeded == false) return Forbid();
+                if (authorizationResult.Succeeded == false) return Forbid();
             }
 
             try

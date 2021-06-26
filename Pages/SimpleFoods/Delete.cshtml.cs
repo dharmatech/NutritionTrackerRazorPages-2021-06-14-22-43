@@ -33,6 +33,8 @@ namespace NutritionTrackerRazorPages.Pages.SimpleFoods
             SimpleFood = await _context.SimpleFood
                 .Include(s => s.FoodCategory)
                 .Include(s => s.User).FirstOrDefaultAsync(m => m.Id == id);
+                        
+            if (SimpleFood == null) return NotFound();
 
             {
                 var authorizationResult = await AuthorizationService.AuthorizeAsync(User, SimpleFood, ItemOperations.Delete);
@@ -40,8 +42,6 @@ namespace NutritionTrackerRazorPages.Pages.SimpleFoods
                 if (authorizationResult.Succeeded == false) return Forbid();
             }
 
-            if (SimpleFood == null) return NotFound();
-            
             return Page();
         }
 
